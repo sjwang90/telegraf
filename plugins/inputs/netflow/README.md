@@ -1,4 +1,4 @@
-# SFlow Input Plugin
+# NetFlow Input Plugin
 
 The Netflow Input Plugin provides support for acting as an Netflow V9/V10 collector in accordance with the specification from [IETF](https://tools.ietf.org/html/rfc7011).
 
@@ -25,25 +25,25 @@ This is a sample configuration for the plugin.
 
 ```toml
 [[inputs.netflow]]
-	## URL to listen on
-	# service_address = "udp://:2055"
-	# service_address = "udp4://:2055"
-	# service_address = "udp6://:2055"
-    
-	## Maximum socket buffer size (in bytes when no unit specified).
-	## For stream sockets, once the buffer fills up, the sender will start backing up.
-	## For datagram sockets, once the buffer fills up, metrics will start dropping.
-	## Defaults to the OS default.
-	# read_buffer_size = "64KiB"
+  ## URL to listen on
+  # service_address = "udp://:2055"
+  # service_address = "udp4://:2055"
+  # service_address = "udp6://:2055"
 
-	# Whether IP addresses should be resolved to host names
-	# dns_fqdn_resolve = true
+  ## Maximum socket buffer size (in bytes when no unit specified).
+  ## For stream sockets, once the buffer fills up, the sender will start backing up.
+  ## For datagram sockets, once the buffer fills up, metrics will start dropping.
+  ## Defaults to the OS default.
+  # read_buffer_size = "64KiB"
 
-	# How long should resolved IP->Hostnames be cached (in seconds)
-	# dns_fqdn_cache_ttl = 3600
-	
-	# Optional processing instructions for transforming DNS resolve host names
-	# dns_multi_name_processor = "s/(.*)(?:-net[0-9])/$1"
+  # Whether IP addresses should be resolved to host names
+  # dns_fqdn_resolve = true
+
+  # How long should resolved IP->Hostnames be cached (in seconds)
+  # dns_fqdn_cache_ttl = 3600
+
+  # Optional processing instructions for transforming DNS resolve host names
+  # dns_multi_name_processor = "s/(.*)(?:-net[0-9])/$1"
 ```
 
 ## DNS Name and SNMP Interface name resolution and caching
